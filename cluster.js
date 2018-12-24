@@ -17,7 +17,9 @@ const wrap = (file)=>{
                 cluster.fork();
             }
         });
-
+        // print the master pid
+        console.log(process.pid);
+        //Running kill -SIGUSR2 [master_pid, example: 27386] will force all workers to restart
         process.on("SIGUSR2", () => {
             const workers = Object.values(cluster.workers);
             const restartWorker = (workerIndex) => {
