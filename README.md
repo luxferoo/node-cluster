@@ -11,7 +11,7 @@ cluster(path.join(__dirname,'file_to_use'));
  
 ```
 # via cli
-
+install babel-node and run:
 ```
 babel-node cluster file_to_use
 ```
