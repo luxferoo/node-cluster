@@ -44,11 +44,9 @@ const wrap = (file)=>{
 if(!module.parent) {
     const appDir = path.dirname(require.main.filename);
     const file = path.join(appDir,'..', process.argv[2]);
-
     if (!fs.existsSync(file))
         throw new Error(`File not exist: ${ file }`);
     wrap(file);
 }
-
 
 export default wrap;
